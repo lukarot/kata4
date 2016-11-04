@@ -1,0 +1,19 @@
+package kata4;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
+import org.jfree.util.HashNMap;
+
+public class Histogram <T>{
+    private final Map<T,Integer> map=new HashMap<>();
+    public Integer get(Object key){
+        return map.get(key);
+    }
+    public Set<T> keyset(){
+    return map.keySet();
+    }
+    public void increment (T key){
+    map.put(key, map.containsKey(key)? map.get(key)+1: 1);
+    }
+}
